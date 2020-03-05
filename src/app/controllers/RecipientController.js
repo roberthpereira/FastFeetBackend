@@ -3,16 +3,19 @@ import * as Yup from 'yup';
 import Recipient from '../models/Recipient';
 
 class RecipientController {
+  /**
+   * CREATE
+   */
   async store(req, res) {
     // regra validation
     const schema = Yup.object().shape({
-      nome: Yup.string().required(),
-      rua: Yup.string().required(),
-      numero: Yup.number().required(),
-      complemento: Yup.string().required(),
-      estado: Yup.string().required(),
-      cidade: Yup.string().required(),
-      cep: Yup.number().required(),
+      name: Yup.string().required(),
+      street: Yup.string().required(),
+      number: Yup.number().required(),
+      complement: Yup.string().required(),
+      state: Yup.string().required(),
+      city: Yup.string().required(),
+      zipcode: Yup.number().required(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -24,16 +27,32 @@ class RecipientController {
     return res.json(recipient);
   }
 
+  /**
+   * READ
+   */
+  async index(req, res) {
+    const recipient = await Recipient.findAll();
+
+    if (!recipient.length) {
+      return res.status(400).json({ error: 'No recipient found' });
+    }
+
+    return res.json(recipient);
+  }
+
+  /**
+   * UPDATE
+   */
   async update(req, res) {
     // validation --------------------
     const schema = Yup.object().shape({
-      nome: Yup.string(),
-      rua: Yup.string(),
-      numero: Yup.number(),
-      complemento: Yup.string(),
-      estado: Yup.string(),
-      cidade: Yup.string(),
-      cep: Yup.number(),
+      name: Yup.string(),
+      street: Yup.string(),
+      number: Yup.number(),
+      complement: Yup.string(),
+      state: Yup.string(),
+      city: Yup.string(),
+      zipcode: Yup.number(),
     });
 
     if (!(await schema.isValid(req.body))) {
@@ -41,33 +60,41 @@ class RecipientController {
     }
     // --------------------
 
-    const recipient = await Recipient.findByPk(req.params.id);
+    const recipient = await Recipient.findByPk(req.params.id, {
+      attributes: [
+        'id',
+        'name',
+        'street',
+        'number',
+        'complement',
+        'state',
+        'city',
+        'zipcode',
+      ],
+    });
 
     if (!recipient) {
       return res.status(400).json({ error: 'Recipient not found' });
     }
 
-    const {
-      id,
-      nome,
-      rua,
-      numero,
-      complemento,
-      estado,
-      cidade,
-      cep,
-    } = await recipient.update(req.body);
+    await recipient.update(req.body);
 
-    return res.json({
-      id,
-      nome,
-      rua,
-      numero,
-      complemento,
-      estado,
-      cidade,
-      cep,
-    });
+    return res.json(recipient);
+  }
+
+  /**
+   * DELETE
+   */
+  async delete(req, res) {
+    const recipient = await Recipient.findByPk(req.params.id);
+
+    if (!recipient) {
+      return res.status(400).json({ message: 'Recipient does not exists' });
+    }
+
+    await recipient.destroy();
+
+    return res.json('Successfully deleted recipient!');
   }
 }
 

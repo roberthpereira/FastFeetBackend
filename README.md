@@ -1,11 +1,11 @@
 <h1 align="center">
-    <img alt="FastFeet" title="FastFeet" src="./.github/logo.png" width="300px" />
+    <img alt="FastFeet" title="FastFeet" src="https://raw.githubusercontent.com/Rocketseat/bootcamp-gostack-desafio-02/master/.github/logo.png" width="300px" />
 </h1>
 
 <blockquote align="center" alt="Não espere para plantar, apenas tenha paciência para colher!" >“Don't wait to plant, just be patient to reap”!</blockquote>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/roberthpereira/FastFeet?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/roberthpereira/FastFeetBackend?color=%2304D361">
 
   <a href="https://www.linkedin.com/in/roberthpereira/">
     <img alt="Made by Roberth Pereira" src="https://img.shields.io/badge/made%20by-Roberth-%2304D361">
@@ -13,8 +13,8 @@
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 
-  <a href="https://github.com/roberthpereira/FastFeet/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/roberthpereira/FastFeet?style=social">
+  <a href="https://github.com/roberthpereira/FastFeetBackend/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/roberthpereira/FastFeetBackend?style=social">
   </a>
 </p>
 
@@ -32,7 +32,7 @@ FastFeet is an app aimed at the use of shipping company.
 
 The Back-end is responsible for providing resources for any type of interface (Web or Mobile).
 
-The [FastFeet] Back-end will be a [RESTFul][rest] API developed in [Node.js][nodejs] and framework Express.
+The [FastFeet] Back-End in [RESTFul][rest] API developed in [Node.js][nodejs] and framework Express.
 
 ## :rocket: Technologies
 
@@ -48,8 +48,13 @@ This project was developed for the final challenge of [RocketSeat GoStack Bootca
 - [Prettier]
 - :mouse: [EditorConfig][vceditconfig]
 - [Sequelize]
+- [Mongodb]
+- [Redis]
+- [Be-Queue]
 - :elephant: [PostgreSQL]
+- [jwt]
 - :closed_lock_with_key: [BCrypt]
+- [Sentry]
 - :card_index: [VS Code][vc]
 
 ## :fire: Installation and Execution
@@ -68,7 +73,7 @@ This project was developed for the final challenge of [RocketSeat GoStack Bootca
 
 ## :memo: License
 
-This project is under the MIT license. See the [LICENSE](https://github.com/roberthpereira/FastFeet/blob/master/LICENSE) for more information.
+This project is under the MIT license. See the [LICENSE](https://github.com/roberthpereira/FastFeetBackend/blob/master/LICENSE) for more information.
 
 ---
 
@@ -89,7 +94,11 @@ Made with ♥ by Roberth Pereira :wave: [Get in touch!][jerp]
 [bcrypt]: https://github.com/dcodeIO/bcrypt.js
 [jwt]: https://jwt.io/
 [rest]: https://pt.wikipedia.org/wiki/REST
-[FastFeet]: https://github.com/roberthpereira/FastFeet
+[FastFeet]: https://github.com/roberthpereira/FastFeetBackend
 [ESLint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 [Prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 [Yup]: https://github.com/jquense/yup
+[Mongodb]: https://www.mongodb.com
+[Redis]: https://redis.io
+[Sentry]: https://sentry.io/
+[Be-Queue]: https://github.com/bee-queue/bee-queue
