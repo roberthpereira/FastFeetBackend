@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1 align="center">
     <img alt="FastFeet" title="FastFeet" src="https://raw.githubusercontent.com/Rocketseat/bootcamp-gostack-desafio-02/master/.github/logo.png" width="300px" />
 </h1>
@@ -102,3 +103,7 @@ Made with ♥ by Roberth Pereira :wave: [Get in touch!][jerp]
 [Redis]: https://redis.io
 [Sentry]: https://sentry.io/
 [Be-Queue]: https://github.com/bee-queue/bee-queue
+=======
+# FastFeetBackend
+FastFeet is an app aimed at the use of shipping company. Back-End in RESTFul API developed in Node.js and Express.
+>>>>>>> 0ebd45f297784fba93fa6f5214f5d40f24233fcf
